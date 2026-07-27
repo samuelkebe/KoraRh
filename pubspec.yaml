@@ -1,0 +1,59 @@
+name: kora_rh
+description: Application mobile RH (pointage, congés, notifications) — architecture MVVM.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # ---- State management (support de l'architecture MVVM) ----
+  provider: ^6.1.5+1
+
+  # ---- Géolocalisation temps réel (vérification de zone au pointage) ----
+  geolocator: ^13.0.1
+  permission_handler: ^12.0.3
+
+  # ----- Gestion des logs -----
+  logger: ^2.6.2
+  # ---- SVG ----
+
+  flutter_svg: ^2.0.9
+
+  # ---
+  google_fonts: ^8.0.2
+
+
+
+
+
+  # ---- Détection de connectivité (WiFi / données mobiles) ----
+  connectivity_plus: ^7.3.0
+
+  # ---- Authentification biométrique (empreinte Android / Face ID iOS) ----
+  local_auth: ^3.0.2
+
+  # ---- Utilitaires ----
+  intl: ^0.20.2
+  dio: ^5.10.0
+  uuid: ^4.6.0
+  cupertino_icons: ^1.0.9
+  font_awesome_flutter: ^11.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/images/
+    - assets/icons/
+    - assets/fonts/
