@@ -1,17 +1,30 @@
-# korarh
+# Kora RH
 
-A new Flutter project.
+Application mobile de gestion RH pour PME, développée en **Flutter/Dart**
+selon une architecture **MVVM** (Model – View – ViewModel).
 
-## Getting Started
+Kora permet aux personnel d'une entreprise de gérer leur présence et leurs congés depuis leur
+téléphone, avec un espace back-office dédié aux RH et managers pour le
+pilotage et la validation.
 
-This project is a starting point for a Flutter application.
+## Fonctionnalités principales
 
-A few resources to get you started if this is your first Flutter project:
+- **Pointage** — entrée/sortie avec vérification de géolocalisation en
+  temps réel, mode hors-ligne avec synchronisation automatique, détection
+  d'oubli de sortie et régularisation.
+- **Congés** — demande en quelques clics, suivi du statut (en attente /
+  validé / refusé), solde de jours toujours à jour.
+- **Notifications** — alertes instantanées (validation de congé, rappel
+  de pointage, annonces de l'entreprise).
+- **Authentification** — connexion classique ou biométrique (empreinte
+  digitale / Face ID selon la plateforme).
+- **Profil** — informations personnelles et accès aux documents RH
+  (bulletins de paie, contrat).
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Architecture
+lib/
+├── core/services/ → géolocalisation, connectivité, notifications, biométrie
+├── data/models/ → entités métier (Employee, Pointage, DemandeConge...)
+├── data/repositories/ → accès aux données, à connecter à l'API backend
+├── viewmodels/ → état et logique de chaque écran (ChangeNotifier)
+└── views/ → widgets Flutter, sans logique métier
